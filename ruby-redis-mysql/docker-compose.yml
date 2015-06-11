@@ -1,0 +1,19 @@
+mysql:
+  image: mysql:latest
+  environment:
+    MYSQL_ROOT_PASSWORD: '12345'
+
+redis:
+  image: redis:latest
+
+ruby:
+  build: .
+  volumes:
+    - .:/app
+    - ~/.pry_history:/root/.pry_history
+    - ~/.mysql_history:/root/.mysql_history
+  ports:
+    - "3000:3000"
+  links:
+    - mysql
+    - redis

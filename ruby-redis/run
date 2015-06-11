@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# docker build
+docker-compose build
+
+# start redis and mysql
+docker-compose up -d
+
+# start bash
+docker-compose run ruby bash

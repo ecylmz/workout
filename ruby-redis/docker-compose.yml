@@ -1,0 +1,10 @@
+redis:
+  image: redis:latest
+
+ruby:
+  build: .
+  volumes:
+    - .:/app
+    - ~/.pry_history:/root/.pry_history
+  links:
+    - redis
