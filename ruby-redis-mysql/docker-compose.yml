@@ -12,8 +12,6 @@ ruby:
     - .:/app
     - ~/.pry_history:/root/.pry_history
     - ~/.mysql_history:/root/.mysql_history
-  ports:
-    - "3000:3000"
   links:
     - mysql
     - redis
